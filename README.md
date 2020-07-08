@@ -23,7 +23,7 @@ in order to run a file parser the user must include the command number as well a
 
 
 ## Necessary Libraries
-
+The user must make sure to have the latest version of python installed. 
 
 ## Setup
 
