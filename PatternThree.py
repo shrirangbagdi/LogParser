@@ -11,8 +11,8 @@ class PatternThree:
     def IsPatternThree(self):
         try:
             time_stamp = self.line[1:24]
-            message_type = self.line[26:30]
-            return self.IsCorrectTimeStamp(time_stamp) and self.IsCorrectType(message_type)
+            message_type = self.line[26:31]
+            return self.IsCorrectTimeStamp(time_stamp) and self.IsCorrectType(message_type.strip())
 
         except:
             print("Not Pattern Three")
@@ -47,7 +47,7 @@ class PatternThree:
             print("Error converting timestamp")
 
     def GetCurrentType(self):
-        return self.line[26:30]
+        return self.line[26:31].strip()
 
     def GetTimeStamp(self):
         return self.line[1:24]
