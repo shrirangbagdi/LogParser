@@ -15,7 +15,7 @@ class PatternFour:
             return self.IsCorrectTimeStamp(time_stamp) and (self.IsCorrectType(message_type) or self.IsCorrectType(message_type_two))
 
         except:
-            print("Not Pattern Three")
+            print("Not Pattern Four")
             return False
 
     def IsCorrectTimeStamp(self, TimeStamp):
@@ -30,7 +30,7 @@ class PatternFour:
             return date_to_match.match(date) and character == "T" and time_to_match.match(time)
 
         except:
-            print("Not Pattern Three")
+            print("Not Pattern Four")
             return False
 
     # create a variable to check for a certain type ....
@@ -47,7 +47,11 @@ class PatternFour:
             print("Error converting timestamp")
 
     def GetCurrentType(self):
-        return self.line[26:30]
+
+        if self.line[27:32] == "ERROR":
+            return self.line[27:32]
+        else:
+            return self.line[27:31]
 
     def GetTimeStamp(self):
         return self.line[1:24]
