@@ -40,7 +40,9 @@ class LogParser:
 
         if listOfWarnings:
             with open(destination + "AllResults" + '.json', 'w') as log_file:
-                json.dump(listOfWarnings, log_file, indent=4)
+                log_file.write('[' + ',\n'.join(json.dumps(i) for i in listOfWarnings) +
+                    ']\n')
+                #json.dump(listOfWarnings, log_file, indent=4)
 
     def RunParser(self):
         command_line_arguments = sys.argv[1:]
@@ -55,12 +57,25 @@ class LogParser:
             list_of_warnings = parser.ParseFolder()
             self.CreateJsonFile(list_of_warnings)
 
+        elif command_line_arguments[0] == "help":
+            print("You must put an input parameter along with the necessary arguments. For example: LogParser.py 5 sql")
+            print("InputParam=0, Input is given by user in terminal to indicate that a folder needs to be parsed")
+            print("InputParam=1, Input is given by user in terminal to indicate that a specific log file in the "
+                  "folder needs to be parsed")
+            print("InputParam=2, Input is given by user in terminal to indicate that two specific log files in the "
+                  "folder needs to be parsed")
+            print("InputParam=3, Input is given by user in terminal to indicate that three specific log files in the "
+                  "folder needs to be parsed")
+            print("InputParam=4, Input is given by user in terminal to indicate a specific start date & end date")
+            print("InputParam=5, Input is given by user in terminal to indicate a specific pattern")
+
         else:
             command_input = int(command_line_arguments[0])
+
             if len(command_line_arguments) < 1:
                 raise Exception("Please enter an argument")
 
-            elif command_input < 0 or command_input > 7:
+            elif command_input < 0 or command_input > 5:
                 raise Exception("Please enter a valid input paramater")
 
             elif command_input == 0:
@@ -118,4 +133,3 @@ class LogParser:
 if __name__ == '__main__':
     LogParser = LogParser("/Users/shrirangbagdi/PycharmProjects/LogParser/LogParser.properties")
     LogParser.RunParser()
-
