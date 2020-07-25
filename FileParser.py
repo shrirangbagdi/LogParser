@@ -163,8 +163,9 @@ class FileParser:
         return updated_list
 
     def CreateJsonFile(self, listOfWarnings):
+        now = datetime.now()
         if listOfWarnings:
-            with open(self.destinationPathway + self.GetJsonFileName() + '.json', 'w') as log_file:
+            with open(self.destinationPathway + self.GetJsonFileName() + " " + now.strftime("%Y-%m-%d %H:%M:%S") + '.json', 'w') as log_file:
                 log_file.write('[' + ',\n'.join(json.dumps(i) for i in listOfWarnings) +
                                ']\n')
 
@@ -186,6 +187,6 @@ class FileParser:
 
 
 if __name__ == '__main__':
-    Parser = FileParser('/Users/shrirangbagdi/Desktop/unravel23770-2019-10-13.log', "/Users/shrirangbagdi/Desktop/")
+    Parser = FileParser('/Users/shrirangbagdi/Desktop/f.log', "/Users/shrirangbagdi/Desktop/")
     # Parser = FileParser('/home/ec2-user/logdata', "/Users/shrirangbagdi/Desktop/")
     Parser.ParseFile()
