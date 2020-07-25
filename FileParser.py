@@ -4,9 +4,9 @@ import re
 
 from datetime import datetime
 
+from PatternFour import PatternFour
 from PatternOne import PatternOne
 from PatternThree import PatternThree
-from PatternTwo import PatternTwo
 
 
 class FileParser:
@@ -43,7 +43,7 @@ class FileParser:
 
                 if (not first_iteration) and (previous_type == "WARN" or previous_type == "ERROR"):
                     list_of_warnings.append(warning)
-                    print(warning)
+
                 else:
                     first_iteration = False
 
@@ -68,7 +68,6 @@ class FileParser:
 
                 if (not first_iteration) and (previous_type == "WARN" or previous_type == "ERROR"):
                     list_of_warnings.append(warning)
-                    print(warning)
 
                 else:
                     first_iteration = False
@@ -97,7 +96,6 @@ class FileParser:
 
                 if (not first_iteration) and (previous_type == "WARN" or previous_type == "ERROR"):
                     list_of_warnings.append(warning)
-                    print(warning)
 
                 else:
                     first_iteration = False
@@ -164,7 +162,6 @@ class FileParser:
 
         return updated_list
 
-    # https://stackoverflow.com/questions/47896877/json-save-one-dict-per-line
     def CreateJsonFile(self, listOfWarnings):
         if listOfWarnings:
             with open(self.destinationPathway + self.GetJsonFileName() + '.json', 'w') as log_file:
@@ -189,6 +186,6 @@ class FileParser:
 
 
 if __name__ == '__main__':
-    Parser = FileParser('/Users/shrirangbagdi/Desktop/f.log', "/Users/shrirangbagdi/Desktop/")
+    Parser = FileParser('/Users/shrirangbagdi/Desktop/unravel23770-2019-10-13.log', "/Users/shrirangbagdi/Desktop/")
     # Parser = FileParser('/home/ec2-user/logdata', "/Users/shrirangbagdi/Desktop/")
     Parser.ParseFile()
