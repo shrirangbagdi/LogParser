@@ -1,4 +1,5 @@
 import os
+import boto3
 
 from FileParser import FileParser
 
@@ -30,5 +31,5 @@ class FolderParser:
 
 if __name__ == '__main__':
 
-    Parser = FolderParser('/Users/shrirangbagdi/Desktop/unravel_logs 2', '/Users/shrirangbagdi/Desktop/')
+    Parser = FolderParser('/Users/shrirangbagdi/Desktop/checkLogs', '/Users/shrirangbagdi/Desktop/')
     Parser.ParseFolder()

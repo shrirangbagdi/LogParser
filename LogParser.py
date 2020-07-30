@@ -40,8 +40,7 @@ class LogParser:
 
         if listOfWarnings:
             with open(destination + "AllResults" + '.json', 'w') as log_file:
-                log_file.write('[' + ',\n'.join(json.dumps(i) for i in listOfWarnings) +
-                    ']\n')
+                log_file.write('\n'.join(json.dumps(i) for i in listOfWarnings) + '\n')
                 #json.dump(listOfWarnings, log_file, indent=4)
 
     def RunParser(self):

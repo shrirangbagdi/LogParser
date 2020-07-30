@@ -22,8 +22,6 @@ class FileParser:
         updated_list = self.UpdateWarningList(list_of_warnings)
         return updated_list
 
-    # { "name" : "khilawar", "File_Name": "unravel_us_1.log","Type": "INFO", "timestamp" :"2020-06-19 21:39:30.568"}
-
     def GenerateWarnings(self):
 
         list_of_warnings = []
@@ -32,6 +30,7 @@ class FileParser:
         current_type = ""
         warning = {}
         first_iteration = True
+        count = 0
 
         for line in log_file:
             pattern_one = PatternOne(line)
@@ -163,11 +162,10 @@ class FileParser:
         return updated_list
 
     def CreateJsonFile(self, listOfWarnings):
-        now = datetime.now()
         if listOfWarnings:
-            with open(self.destinationPathway + self.GetJsonFileName() + " " + now.strftime("%Y-%m-%d %H:%M:%S") + '.json', 'w') as log_file:
-                log_file.write('[' + ',\n'.join(json.dumps(i) for i in listOfWarnings) +
-                               ']\n')
+            with open(self.destinationPathway + self.GetJsonFileName() + '.json', 'w') as log_file:
+                log_file.write('\n'.join(json.dumps(i) for i in listOfWarnings) +
+                               '\n')
 
                 # json.dump(listOfWarnings, log_file, indent=0)
 
