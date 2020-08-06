@@ -23,7 +23,7 @@ in order to run a file parser the user must include the command number as well a
 
 
 ## 3. Necessary Libraries
-The user must make sure to have the latest version of python installed. 
+The user must make sure to have the latest version of python installed as well as boto3. 
 
 ## Setup
 
