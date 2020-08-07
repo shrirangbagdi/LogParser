@@ -26,9 +26,8 @@ If one wants to just generate a JSON file by specificing the pathway of the log 
 
 ## 2. Possible Commands
 
-In order to run this parser properly, you will have to make sure that you run the commands properly. For now there are six possible commands. In order to run these commands properly, you must update the 
-source pathway to include a folder as well as a destination pathway inside the property file. You must additionally read the [LogParser.properties](https://github.com/shrirangbagdi/LogParser/blob/master/LogParser.properties) file descriptions. It contains a list of possible commands that this parser can complete. For example, 
-in order to run a file parser the user must include the command number as well as the file in the folder that they want to parse through.
+If the program is run using the command line, there are 6 possible commands that the user can run. In order to run these commands properly, you must update the 
+source pathway to include a folder as well as a destination pathway inside the property file. You must additionally read the [LogParser.properties](https://github.com/shrirangbagdi/LogParser/blob/master/LogParser.properties) file descriptions. It contains a list of possible commands that this parser can complete. For example, in order to run a file parser the user must include the command number as well as the file in the folder that they want to parse through.
 
 
 ## 3. Necessary Libraries
