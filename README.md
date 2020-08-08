@@ -6,8 +6,7 @@ Author: Shrirang Bagdi - shrirangbagdi@gmail.com
 Table of Contents
 1. Description of Parser
 2. Possible Commands
-3. Necessary Libraries
-4. Setup
+3. Setup
 
 ## 1. Description of Parser
 
@@ -24,14 +23,16 @@ If one wants to just generate a JSON file without using the AWS lambda trigger, 
 #### Log Parser for a file through the command line 
 If one wants to just generate a JSON file by specificing the pathway of the log file there is also an implementation for that to aid the user in generating JSON files. 
 
+
 ## 2. Possible Commands
 
 If the program is run using the command line, there are 6 possible commands that the user can run. In order to run these commands properly, you must update the 
-source pathway to include a folder as well as a destination pathway inside the property file. You must additionally read the [LogParser.properties](https://github.com/shrirangbagdi/LogParser/blob/master/LogParser.properties) file descriptions. It contains a list of possible commands that this parser can complete. For example, in order to run a file parser the user must include the command number as well as the file in the folder that they want to parse through.
+source pathway and destination pathway inside the property file. You must additionally read the [LogParser.properties](https://github.com/shrirangbagdi/LogParser/blob/master/LogParser.properties) file for more information. It contains a list of possible commands that this parser can complete. For example, in order to run a file parser the user must include the command number as well as the file in the folder that they want to parse through.
 
 
-## 3. Necessary Libraries
-The user must make sure to have the latest version of python installed as well as boto3. 
+## 3. Setup
 
-## Setup
+For all setup options make sure that python3 is installed. Additionally, for all implementations of the LogParser the differnt pattern classes are necessary in order for the program to run. 
+If you are using the LogParser with the S3 Bucket without AWS Lambda make sure to have boto3 installed. 
+If you are using the LogParser for a file through the command line make sure that the source pathway and destination pathway is updated inside the property file. You must additionally read the [LogParser.properties](https://github.com/shrirangbagdi/LogParser/blob/master/LogParser.properties) file for more information.
 
