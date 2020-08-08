@@ -33,6 +33,6 @@ source pathway and destination pathway inside the property file. You must additi
 ## 3. Setup
 
 For all setup options make sure that python3 is installed. Additionally, for all implementations of the LogParser the different pattern classes are necessary in order for the program to run. 
-If you are using the LogParser with the S3 Bucket without AWS Lambda make sure to have boto3 installed. 
+If you are using the LogParser with the S3 Bucket without AWS Lambda make sure to have Boto3 installed. 
 If you are using the LogParser for a file through the command line make sure that the source pathway and destination pathway is updated inside the property file. You must additionally read the [LogParser.properties](https://github.com/shrirangbagdi/LogParser/blob/master/LogParser.properties) file for more information.
 
