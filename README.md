@@ -3,12 +3,17 @@
 Author: Shrirang Bagdi - shrirangbagdi@gmail.com
 
 
+
+
 Table of Contents
 1. Description of Parser
 2. Possible Commands
 3. Setup
 
+An use case for this code. 
 ![Screen Shot 2020-08-12 at 12 04 48 PM](https://user-images.githubusercontent.com/55151440/90059181-9b2fe080-dc97-11ea-98f8-ea9758ddaac9.png)
+
+
 ## 1. Description of Parser
 
 It is difficult to read through hundreds of lines of errors, warnings, information, etc. in order to understand what may be going wrong with an application. This open source log parsing project was created in order to aid in parsing such logs in order to find error and warning messages and to generate a detailed output file.
